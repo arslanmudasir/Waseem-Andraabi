@@ -2,53 +2,52 @@
 import AchievementsCarousel from "../components/AchievementsCarousel.astro";
 const achievements = [
   {
-    title1: "Most Trusted Embryologist in Delhi",
-    title2: "Lifetime Member of AAHP",
-    image1: "/most_trusted.webp",
-    image2: "/lifetime_membership.webp",
+    title: "Most Trusted Embryologist in Delhi",
+    image: "/most_trusted.webp",
+  },
+  {
+    title: "Lifetime Member of AAHP",
+    image: "/lifetime_membership.webp",
+  },
+  {
+    title: "Lead Trainer at Workshop",
+    image: "/achievement3.webp",
   },
 ];
 ---
 
-<section class="py-16 px-4 sm:px-6 lg:px-8 flex items-center">
-  <div class="container mx-auto z-10 space-y-8 flex flex-col items-center">
-    <h1
-      class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-pacifico underline mb-6 text-center"
-    >
-      Achievements
-    </h1>
-    {
-      achievements.map((achievement, index) => (
-        <div class="flex flex-col sm:flex-row items-start justify-center space-y-6 sm:space-y-0 sm:space-x-6 w-4/5 h-full">
-            
-          <div class="flex flex-col justify-start space-y-4 sm:space-y-0 sm:items-center w-full sm:w-1/2">
-            <h2 class="text-xl sm:text-2xl font-semibold text-teal-300 text-center sm:text-left font-averia_sans pt-2">
-              &bull;<span class="text-teal-300 underline mx-1">{achievement.title1}</span>
-            </h2>
-            <div class="w-auto rounded-lg transition-transform duration-300 transform">
-              <img
-                src={achievement.image1}
-                alt={`${achievement.title1} Certificate`}
-                class="w-full h-auto object-cover rounded-lg"
-              />
-            </div>
-          </div>
-
-          <div class="flex flex-col justify-start space-y-4 sm:space-y-0 sm:items-center w-full sm:w-1/2 h-full">
-            <h2 class="text-xl sm:text-2xl text-teal-300 font-semibold text-center sm:text-left font-averia_sans pt-2">
-              &bull;<span class="text-teal-300 underline mx-1">{achievement.title2}</span>
-            </h2>
-            <div class="w-auto rounded-lg transition-transform duration-300 transform bg-white h-full">
-              <img
-                src={achievement.image2}
-                alt={`${achievement.title2} Certificate`}
-                class="w-full h-full object-cover rounded-lg"
-              />
-            </div>
-          </div>
+<section class="py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center w-full">
+  <h1
+    class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-pacifico underline mb-10 text-center"
+  >
+    Achievements
+  </h1>
+  <div
+    class="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center px-24"
+  >
+    {achievements.map((achievement, index) => (
+      <div
+        class="flex flex-col items-center space-y-4 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+      >
+        <h2
+          class="text-xl sm:text-2xl font-semibold text-teal-300 text-center font-averia_sans"
+        >
+          &bull;
+          <span class="text-teal-300 underline mx-1">
+            {achievement.title}
+          </span>
+        </h2>
+        <div
+          class="w-full min-w-sm rounded-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 sm:hover:scale-110"
+        >
+          <img
+            src={achievement.image}
+            alt={`${achievement.title || 'Achievement'} Certificate`}
+            class="w-full h-fit object-cover rounded-lg"
+          />
         </div>
-      ))
-    }
+      </div>
+    ))}
   </div>
 </section>
 <AchievementsCarousel />

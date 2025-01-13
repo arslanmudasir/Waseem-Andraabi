@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["_astro/follicular-ultrasound.BiQM45Ev.js","_astro/hoisted.KKlxKu7q.js","_astro/astro/assets-service.CScP7A7k.js","_astro/hoisted.xI0VDRZf.js"])))=>i.map(i=>d[i]);
+import{_ as t}from"./astro/assets-service.CScP7A7k.js";async function o(){return t(()=>import("./follicular-ultrasound.BiQM45Ev.js"),__vite__mapDeps([0,1,2,3]))}const e="@@ASTRO-LINKS@@",c="@@ASTRO-STYLES@@",r="@@ASTRO-SCRIPTS@@",l={__astroPropagation:!0,getMod:o,collectedLinks:e,collectedStyles:c,collectedScripts:r};export{l as default};
